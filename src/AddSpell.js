@@ -5,14 +5,19 @@ function AddSpell ({ setSpells }) {
 
     const [name, setName]=useState("");
     const [description, setDescription]=useState("");
+    const [id, setId] = useState(1)
 
     function handleSubmit (e) {
+        setId (id + 1)
         e.preventDefault();
 
+        // setId ({id: id + 1})
+        //console.log(id)
+
         const addSpell= {
-            name: name,
-            description: description,
-            // UserId:1
+            "name": name,
+            "description": description,
+            "id": id
         };
 
         fetch("http://localhost:3000/spells", {
@@ -20,10 +25,10 @@ function AddSpell ({ setSpells }) {
             headers: {
               "Content-Type": "application/json",
             },
-            body: JSON.stringify({addSpell})
-          })
+            body: JSON.stringify(addSpell)})
           .then((resp) => resp.json())
           .then((newSpell) => 
+          // console.log(Spells))
           setSpells([...Spells, newSpell]))
         //   console.log(newSpell)
         
