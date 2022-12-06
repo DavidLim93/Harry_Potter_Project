@@ -5,7 +5,7 @@ function Home() {
   return (
   <div>
   <h2 className="h2">Welcome to the page where you can see the different spells used in the world of magic!</h2>
-  <img className="logo" src={logo}></img>
+  <img className="logo" src={logo} alt={logo}></img>
   </div>)
 }
 

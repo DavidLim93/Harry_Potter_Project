@@ -8,7 +8,7 @@ import Home from "./Home";
 import "./styles.css";
 
 
-function App({handleNewSpell, spells, setSpells}) {
+function App({ spells, setSpells}) {
 
   function handleNewSpell (newSpell) {
     const updatedSpells=[...spells, newSpell];
